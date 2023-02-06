@@ -17,9 +17,20 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  personajes: Personaje[] = [
+    {
+      nombre: "Goku",
+      poder: 15000
+    },
+    {
+      nombre: "Vegueta",
+      poder: 7500
+    }
+  ]
+
   nuevo: Personaje = {
-    nombre: 'Trucks',
-    poder: 140000
+    nombre: '',
+    poder: 0
   }
 
   agregar(e: any) {
@@ -34,6 +45,18 @@ export class MainPageComponent implements OnInit {
 
   cambiarNombre(event: any) {
     console.log(event.target.value);
+  }
+
+  agregarALista() {
+    if (this.nuevo.nombre.trim().length === 0) {
+      return;
+    }
+
+    this.personajes.push(this.nuevo);
+    this.nuevo = {
+      nombre: "",
+      poder: 0
+    }
   }
 
 }
