@@ -8,28 +8,9 @@
     </div>
 
     <div class="col">
-        <h3>Agregar <small>{{nuevo.nombre}}</small></h3>
-        <hr>
-
-        <!-- Formularios reactivo nos ofrece ngSubmit que evita uso de event.preventDefault -->
-        <form (ngSubmit)="agregarALista()">
-            <input 
-                type="text" 
-                placeholder="Nombre"
-                name="nombre"
-                [(ngModel)]="nuevo.nombre">
-                <!-- [value]="nuevo.nombre" -->
-                <!-- (input)="cambiarNombre($event)" -->
-
-            <input 
-                type="number" 
-                placeholder="Poder"
-                name="poder"
-                [(ngModel)]="nuevo.poder">
-        
-            <button type="submit">
-                Agregar
-            </button>
-        </form>
+        <app-agregar 
+            [personajes]="personajes" 
+            [nuevo]="nuevo">
+        </app-agregar>
     </div>
 </div>
