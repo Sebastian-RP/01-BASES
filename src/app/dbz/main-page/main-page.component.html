@@ -7,10 +7,11 @@
         
     </div>
 
+    <!-- Nuevo envia data a un componente hijo, (onNuevoPersonaje) es une evento que se dispara en cambios del hijo -->
     <div class="col">
         <app-agregar 
-            [personajes]="personajes" 
-            [nuevo]="nuevo">
-        </app-agregar>
+            [nuevo]="nuevo"
+            (onNuevoPersonaje)= "agregarNuevoPersonaje($event)"
+        ></app-agregar>
     </div>
 </div>

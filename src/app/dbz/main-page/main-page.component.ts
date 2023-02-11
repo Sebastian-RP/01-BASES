@@ -43,16 +43,7 @@ export class MainPageComponent implements OnInit {
     console.log(event.target.value);
   }
 
-  // agregarALista() {
-  //   if (this.nuevo.nombre.trim().length === 0) { return }
-
-  //   console.log(this.nuevo);
-    
-  //   this.personajes.push(this.nuevo);
-  //   this.nuevo = {
-  //     nombre: "",
-  //     poder: 0
-  //   }
-  // }
-
+  agregarNuevoPersonaje(arg: Personaje) {
+    this.personajes.push(arg);
+  }
 }
