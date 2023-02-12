@@ -10,27 +10,17 @@ import { DBzServices } from '../services/dbz.service';
 export class MainPageComponent implements OnInit {
 
   //llamar servicio en el contructor
-  constructor( private dbZServices: DBzServices) { 
+  constructor( private dbZServices: DBzServices) { }
 
-  }
-
-  ngOnInit(): void {
-  }
-
-  personajes: Personaje[] = [
-    {
-      nombre: "Goku",
-      poder: 15000
-    },
-    {
-      nombre: "Vegueta",
-      poder: 7500
-    }
-  ]
+  ngOnInit(): void { }
 
   nuevo: Personaje = {
     nombre: '',
     poder: 0
+  }
+
+  get personajes(): Personaje[] {
+    return this.dbZServices.personajes;
   }
 
   agregar(e: any) {
@@ -47,8 +37,8 @@ export class MainPageComponent implements OnInit {
     console.log(event.target.value);
   }
 
-  agregarNuevoPersonaje(arg: Personaje) {
-    this.personajes.push(arg);
-  }
+  // agregarNuevoPersonaje(arg: Personaje) {
+  //   // this.personajes.push(arg);
+  // }
 
 }
